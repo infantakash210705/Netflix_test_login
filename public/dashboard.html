@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h1 class="logo">NETFLIX</h1>
+            
+            <div class="nav-section">
+                <h3>MENU</h3>
+                <ul>
+                    <li class="active"><i class="fa-solid fa-house"></i> Home</li>
+                    <li><i class="fa-solid fa-tv"></i> Tv Shows</li>
+                    <li><i class="fa-solid fa-film"></i> Movies</li>
+                    <li><i class="fa-regular fa-clock"></i> Recently Added</li>
+                    <li><i class="fa-solid fa-list"></i> My list</li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <h3>SETTINGS</h3>
+                <ul>
+                    <li><i class="fa-solid fa-file-invoice-dollar"></i> Change Plan</li>
+                    <li><i class="fa-solid fa-clipboard-question"></i> FAQ</li>
+                    <li><i class="fa-solid fa-circle-question"></i> Help Center</li>
+                    <li><i class="fa-solid fa-file-contract"></i> Terms of Use</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> Privacy</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="#"><i class="fa-solid fa-circle-info"></i> Questions? Contact us.</a>
+                <span class="version">NETFLIX v1.0</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <!-- Profile area matched to screenshot -->
+                <div class="user-profile">
+                    <span>Infant Akash</span>
+                    <img src="image/WhatsApp Image 2023-12-21 at 11.25.16_e5a0f473.jpg" alt="User Avatar">
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                <!-- Row 1 -->
+                <section class="movie-row">
+                    <h2>Popular on Netflix</h2>
+                    <div class="movies">
+                        <div class="movie" style="background-image: url('image/x\ avenger.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ titanic.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ aquaman.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ pirates.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ bramastra2.jpeg');"></div>
+                    </div>
+                </section>
+
+                <!-- Row 2 -->
+                <section class="movie-row">
+                    <h2>Trending Now</h2>
+                    <div class="movies">
+                        <div class="movie" style="background-image: url('image/x\ War.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ ps1.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ jurassicpark.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ micheal.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ black\ adam.jpeg');"></div>
+                    </div>
+                </section>
+
+                <!-- Row 3 -->
+                <section class="movie-row">
+                    <h2>Continue Watching</h2>
+                    <div class="movies">
+                        <div class="movie" style="background-image: url('image/x\ strangerthing.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/long\ kalki.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ baguballi.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ lionking.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ elite.jpeg');"></div>
+                    </div>
+                </section>
+
+                <!-- Row 4 -->
+                <section class="movie-row">
+                    <h2>Blockbuster Action</h2>
+                    <div class="movies">
+                        <div class="movie" style="background-image: url('image/x\ avatar.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ batman.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/long\ kgf2.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/x\ jumanji.jpeg');"></div>
+                        <div class="movie" style="background-image: url('image/long\ sardar.jpeg');"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #111827; /* Dark blue/grey */
+    color: #fff;
+    overflow: hidden; /* App-like feel */
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background-color: #0c0f16;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+}
+
+.sidebar .logo {
+    color: #e50914;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.nav-section {
+    margin-bottom: 30px;
+}
+
+.nav-section h3 {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.nav-section ul {
+    list-style: none;
+}
+
+.nav-section ul li {
+    padding: 10px 0;
+    color: #a5a8ae;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-section ul li i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.nav-section ul li:hover, .nav-section ul li.active {
+    color: #fff;
+    transform: translateX(4px);
+}
+
+.nav-section ul li.active {
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    font-size: 0.85rem;
+}
+
+.sidebar-footer a {
+    color: #a5a8ae;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.sidebar-footer a:hover {
+    color: #fff;
+}
+
+.version {
+    color: #4b5563;
+    font-size: 0.75rem;
+    display: block;
+    text-align: center;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.topbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1f2937;
+    border-radius: 4px;
+    padding: 10px 16px;
+    width: 450px;
+}
+
+.search-bar i {
+    color: #9ca3af;
+    margin-right: 12px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+.user-profile {
+    position: absolute;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}
+
+.user-profile span {
+    font-size: 0.9rem;
+    color: #f3f4f6;
+    font-weight: 500;
+}
+
+.user-profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+}
+
+.user-profile i {
+    color: #d1d5db;
+    font-size: 0.8rem;
+}
+
+/* Content Scrollable Area */
+.content-scroll {
+    overflow-y: auto;
+    padding: 20px 40px 60px;
+}
+
+/* Hide scrollbar for cleaner look */
+.content-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+.content-scroll::-webkit-scrollbar-thumb {
+    background-color: #4b5563;
+    border-radius: 4px;
+}
+
+.movie-row {
+    margin-bottom: 40px;
+}
+
+.movie-row h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #f9fafb;
+    letter-spacing: 0.5px;
+}
+
+.movies {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px; /* for hover effect space */
+}
+
+.movies::-webkit-scrollbar {
+    height: 6px;
+}
+.movies::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+
+.movie {
+    min-width: 260px;
+    height: 146px; /* 16:9 aspect ratio approx */
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #1f2937; /* fallback */
+    position: relative;
+    border: 1px solid transparent;
+}
+
+/* Smooth Hover Animation */
+.movie:hover {
+    transform: scale(1.05); /* slight scale up */
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.3);
+}
