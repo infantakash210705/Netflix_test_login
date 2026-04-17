@@ -14,9 +14,7 @@ let db;
 async function initDB() {
     try {
         // Connect to Railway DB
-        db = await mysql.createConnection(
-            process.env.DATABASE_URL + "?ssl={" + "rejectUnauthorized:false}"
-        );
+        db = await mysql.createConnection(process.env.DATABASE_URL);
 
         console.log("Connected to Railway DB");
 
