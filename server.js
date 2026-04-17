@@ -13,24 +13,16 @@ let db;
 
 async function initDB() {
     try {
-        // Connect without database first to ensure it's created
-        const connection = await mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: 'root@123'
-        });
-
-        await connection.query(`CREATE DATABASE IF NOT EXISTS netflix_app`);
-        await connection.end();
-        console.log("Database 'netflix_app' ensured.");
-
-        // Connect specifically to our database
+        // Connect to Railway DB
         db = await mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: 'root@123',
-            database: 'netflix_app'
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+            database: process.env.DB_NAME,
+            port: process.env.DB_PORT
         });
+
+        console.log("Connected to Railway DB");
 
         const createTableQuery = `
             CREATE TABLE IF NOT EXISTS users (
@@ -39,10 +31,12 @@ async function initDB() {
                 password VARCHAR(255)
             )
         `;
+
         await db.query(createTableQuery);
         console.log("Table 'users' ensured.");
+
     } catch (err) {
-        console.error("Database connection failed. Please ensure MySQL is running locally on default port with 'root' and no password.");
+        console.error("Database connection failed:");
         console.error(err);
     }
 }
