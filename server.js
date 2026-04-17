@@ -93,6 +93,7 @@ app.post("/signup", async (req, res) => {
 // });
 
 app.post("/login", async (req, res) => {
+    console.log("LOGIN API HIT:", req.body);
     const { email, password } = req.body;
 
     try {
