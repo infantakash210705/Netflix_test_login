@@ -78,41 +78,41 @@ app.post("/signup", async (req, res) => {
 // });
 
 //////////sql injection:
-// app.post('/login', async (req, res) => {
-//     const { email, password } = req.body;
-
-//     const query = `SELECT * FROM users WHERE email = '${email}'`;
-
-//     const [rows] = await db.query(query);
-
-//     if (rows.length > 0) {
-//         res.send("Login success");
-//     } else {
-//         res.status(401).send("Invalid");
-//     }
-// });
-
-app.post("/login", async (req, res) => {
-    console.log("LOGIN API HIT:", req.body);
+app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    try {
-        const [rows] = await db.query(
-            "SELECT * FROM users WHERE email = ? AND password = ?",
-            [email, password]
-        );
+    const query = `SELECT * FROM users WHERE email = '${email}'`;
 
-        if (rows.length > 0) {
-            res.status(200).send("Login success");
-        } else {
-            res.status(401).send("Invalid credentials");
-        }
+    const [rows] = await db.query(query);
 
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Server error");
+    if (rows.length > 0) {
+        res.send("Login success");
+    } else {
+        res.status(401).send("Invalid");
     }
 });
+
+// app.post("/login", async (req, res) => {
+//     console.log("LOGIN API HIT:", req.body);
+//     const { email, password } = req.body;
+
+//     try {
+//         const [rows] = await db.query(
+//             "SELECT * FROM users WHERE email = ? AND password = ?",
+//             [email, password]
+//         );
+
+//         if (rows.length > 0) {
+//             res.status(200).send("Login success");
+//         } else {
+//             res.status(401).send("Invalid credentials");
+//         }
+
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).send("Server error");
+//     }
+// });
 // Since index.html provides login
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
