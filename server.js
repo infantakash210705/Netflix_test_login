@@ -46,8 +46,7 @@ app.post("/signup", async (req, res) => {
     if (!email || !password) return res.status(400).send("Email and password required");
 
     try {
-        const hashedPassword = await bcrypt.hash(password, 10);
-        await db.query("INSERT INTO users (email, password) VALUES (?, ?)", [email, hashedPassword]);
+        await db.query("INSERT INTO users (email, password) VALUES (?, ?)", [email, password]);
         res.status(201).send("User registered");
     } catch (err) {
         if (err.code === 'ER_DUP_ENTRY') {
